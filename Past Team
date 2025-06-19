@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Past Members - Samvaad Srijan Samiti</title>
+  <title>Past Team - Samvaad Srijan Samiti</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
+      background-color: #f4f4f4;
     }
     header {
       background-color: #002147;
@@ -29,21 +29,32 @@
       font-weight: bold;
     }
     main {
-      padding: 20px;
+      padding: 30px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      color: #002147;
+      text-align: center;
+      margin-bottom: 10px;
     }
     .intro {
-      font-size: 18px;
       text-align: center;
+      font-size: 18px;
+      color: #444;
       margin-bottom: 30px;
-      color: #333;
     }
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 20px;
       justify-items: center;
     }
     .member {
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
       text-align: center;
     }
     .member img {
@@ -51,56 +62,58 @@
       height: 150px;
       object-fit: cover;
       border-radius: 0;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-    h2 {
-      text-align: center;
-      color: #002147;
+    .member h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+    }
+    .member p {
+      margin: 0;
+      color: #666;
     }
     footer {
       background-color: #002147;
       color: white;
       text-align: center;
       padding: 15px;
-      margin-top: 40px;
+      margin-top: 50px;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>संवाद सृजन समिति</h1>
-    <p>Past Members</p>
+    <p>Past Team</p>
   </header>
   <nav>
     <a href="index.html">Home</a>
     <a href="team.html">Team</a>
+    <a href="past.html">Past Team</a>
     <a href="gallery.html">Gallery</a>
     <a href="events.html">Events</a>
     <a href="contact.html">Contact</a>
-    <a href="past.html">Past Members</a>
   </nav>
   <main>
     <div class="intro">
-      <p>Our past members have laid the foundation of our debating spirit. Their dedication, leadership, and passion continue to inspire us today.</p>
+      <p>Our past team members have been the pillars of our club's legacy. Their hard work, leadership, and contributions have helped shape the Samvaad Srijan Samiti into what it is today. We honor their journey and commitment with pride and gratitude.</p>
     </div>
-    <h2>Past Core Members</h2>
+    <h2>Past Core Team</h2>
     <div class="team-grid">
       <div class="member">
-        <img src="past1.jpg" alt="Member 1">
+        <img src="amit.jpg" alt="Amit Sharma">
         <h3>Amit Sharma</h3>
         <p>Ex-President</p>
       </div>
       <div class="member">
-        <img src="past2.jpg" alt="Member 2">
+        <img src="sweta.jpg" alt="Sweta Kumari">
         <h3>Sweta Kumari</h3>
         <p>Former Speech Head</p>
       </div>
       <div class="member">
-        <img src="past3.jpg" alt="Member 3">
+        <img src="rajeev.jpg" alt="Rajeev Anand">
         <h3>Rajeev Anand</h3>
         <p>Ex-Digital Coordinator</p>
       </div>
-      <!-- Add more past members here -->
     </div>
   </main>
   <footer>
