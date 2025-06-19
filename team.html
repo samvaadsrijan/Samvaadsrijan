@@ -1,44 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Team - Samvaad Srijan Samiti</title>
   <style>
-    body { font-family: Arial; margin: 0; background: #f7f7f7; }
-    header, footer { background: #0c1a4b; color: white; text-align: center; padding: 30px; }
-    nav { background: #11235a; padding: 10px; text-align: center; }
-    nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-    section { padding: 40px; max-width: 900px; margin: auto; }
-    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; }
-    .member { background: #e1e8f0; padding: 15px; border-radius: 8px; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f9fc;
+      color: #222;
+    }
+
+    header, footer {
+      background-color: #0c1a4b;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+
+    nav {
+      background-color: #11235a;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0.75rem 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+
+    main {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+      color: #0c1a4b;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .member {
+      background: #e1e8f0;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      max-width: 200px;
+    }
+
+    .member img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 0.5rem;
+    }
+
+    .member h3 {
+      margin: 0.5rem 0 0.25rem;
+      font-size: 1.1rem;
+    }
+
+    .member p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
+  <header>
+    <h1>टीम की परिचयय</h1>
+  </header>
 
-<header>
-  <h1>Our Team</h1>
-</header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="team.html">Team</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="team.html">Team</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="events.html">Events</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <main>
+    <h2>Meet Our Core Team</h2>
+    <div class="team-grid">
+      <div class="member">
+        <img src="https://via.placeholder.com/100" alt="Roushan Kumar Mishra">
+        <h3>Roushan Kumar Mishra</h3>
+        <p>Prof. Incharge</p>
+      </div>
+      <div class="member">
+        <img src="https://via.placeholder.com/100" alt="Nigam Kumar">
+        <h3>Nigam Kumar</h3>
+        <p>President</p>
+      </div>
+      <div class="member">
+        <img src="https://via.placeholder.com/100" alt="Ashish Ranjan">
+        <h3>Ashish Ranjan</h3>
+        <p>Vice President</p>
+      </div>
+      <div class="member">
+        <img src="https://via.placeholder.com/100" alt="Naveen Kumar">
+        <h3>Naveen Kumar</h3>
+        <p>Membership Coordinator</p>
+      </div>
+      <div class="member">
+        <img src="https://via.placeholder.com/100" alt="Kaushal Kumar">
+        <h3>Kaushal Kumar</h3>
+        <p>Quiz & Writing Head</p>
+      </div>
+      <div class="member">
+        <img src="https://via.placeholder.com/100" alt="Sujeet Kumar">
+        <h3>Sujeet Kumar</h3>
+        <p>Digital Head</p>
+      </div>
+      <div class="member">
+        <img src="https://via.placeholder.com/100" alt="Rupam Kumari">
+        <h3>Rupam Kumari</h3>
+        <p>Debate & Speech Head</p>
+      </div>
+    </div>
+  </main>
 
-<section class="team-grid">
-  <div class="member"><strong>Roushan Kumar Mishra</strong><br>(Prof. Incharge)</div>
-  <div class="member"><strong>Nigam Kumar</strong><br>(Founder cum President)</div>
-  <div class="member"><strong>Ashish Ranjan</strong><br>(Vice President)</div>
-  <div class="member"><strong>Naveen Kumar</strong><br>(Membership Coordinator)</div>
-  <div class="member"><strong>Kaushal Kumar</strong><br>(Quiz & Writing Head)</div>
-  <div class="member"><strong>Sujeet Kumar</strong><br>(Digital Head)</div>
-  <div class="member"><strong>Rupam Kumari</strong><br>(Debate & Speech Head)</div>
-</section>
-
-<footer>
-  &copy; 2025 संवाद सृजन समिति
-</footer>
-
+  <footer>
+    &copy; 2025 संवाद सृजन समिति
+  </footer>
 </body>
 </html>
