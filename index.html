@@ -1,50 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>संवाद सृजन समिति</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samvaad Srijan Samiti</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f9fc;
+      color: #222;
     }
     header {
-      background-color: #333;
+      background-color: #0c1a4b;
       color: white;
-      padding: 20px;
+      text-align: center;
+      padding: 40px 20px;
     }
-    img {
-      width: 120px;
-      margin-top: 10px;
+    header img {
+      width: 100px;
     }
-    h1 {
-      margin: 10px 0;
+    nav {
+      background-color: #11235a;
+      text-align: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      color: #0c1a4b;
+      margin-bottom: 30px;
+    }
+    .team-grid, .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+    .team-grid div {
+      background: #e8eef8;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    .contact {
+      text-align: center;
+    }
+    .contact a {
+      color: #fff;
+      background: #0c1a4b;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
     }
     footer {
-      margin-top: 40px;
-      padding: 20px;
-      background: #222;
+      background: #0c1a4b;
       color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logo.png" alt="Club Logo">
-    <h1>संवाद सृजन समिति</h1>
-    <p>तथ्य से सत्य तक, सोच,समृद्धि,समर्थन</p>
+    <img src="logo.png" alt="Club Logo" />
+    <h1>Samvaad Srijan Samiti</h1>
+    <p>Unleashing the Power of Youth Through Debates</p>
   </header>
 
-  <main>
-    <h2>Welcome to our Club Website!</h2>
-    <p>Events | Gallery | Team | Contact</p>
-  </main>
+  <nav>
+    <a href="#team">Team</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="team">
+    <h2>Our Team</h2>
+    <div class="team-grid">
+      <div><strong>Roushan Kumar Mishra</strong><br>Prof. Incharge</div>
+      <div><strong>Nigam Kumar</strong><br>President</div>
+      <div><strong>Ashish Ranjan</strong><br>Vice President</div>
+      <div><strong>Naveen Kumar</strong><br>Membership Coordinator</div>
+      <div><strong>Kaushal Kumar</strong><br>Quiz & Writing Head</div>
+      <div><strong>Sujeet Kumar</strong><br>Digital Head</div>
+      <div><strong>Rupam Kumari</strong><br>Debate & Speech Head</div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="gallery1.jpg" alt="Gallery Image 1" />
+      <img src="gallery2.jpg" alt="Gallery Image 2" />
+      <img src="gallery3.jpg" alt="Gallery Image 3" />
+    </div>
+    <p style="text-align:center; color:gray; margin-top:10px;">(Upload your real images later on GitHub)</p>
+  </section>
+
+  <section id="events">
+    <h2>Upcoming Events</h2>
+    <p style="text-align:center;">Stay tuned! Events details will be updated soon.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact">
+      <p>Email us at:</p>
+      <a href="mailto:debateclub24@gmail.com">debateclub24@gmail.com</a>
+    </div>
+  </section>
 
   <footer>
-    &copy; 2025 संवाद सृजन समिति
+    &copy; 2025 Samvaad Srijan Samiti | All Rights Reserved
   </footer>
 
 </body>
