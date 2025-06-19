@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Past Members - Samvaad Srijan Samiti</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #002147;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #021b38;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    main {
+      padding: 20px;
+    }
+    .intro {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+    .member {
+      text-align: center;
+    }
+    .member img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #002147;
+    }
+    footer {
+      background-color: #002147;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>संवाद सृजन समिति</h1>
+    <p>Past Members</p>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="team.html">Team</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+    <a href="past.html">Past Members</a>
+  </nav>
+  <main>
+    <div class="intro">
+      <p>Our past members have laid the foundation of our debating spirit. Their dedication, leadership, and passion continue to inspire us today.</p>
+    </div>
+    <h2>Past Core Members</h2>
+    <div class="team-grid">
+      <div class="member">
+        <img src="past1.jpg" alt="Member 1">
+        <h3>Amit Sharma</h3>
+        <p>Ex-President</p>
+      </div>
+      <div class="member">
+        <img src="past2.jpg" alt="Member 2">
+        <h3>Sweta Kumari</h3>
+        <p>Former Speech Head</p>
+      </div>
+      <div class="member">
+        <img src="past3.jpg" alt="Member 3">
+        <h3>Rajeev Anand</h3>
+        <p>Ex-Digital Coordinator</p>
+      </div>
+      <!-- Add more past members here -->
+    </div>
+  </main>
+  <footer>
+    <p>© 2025 संवाद सृजन समिति</p>
+  </footer>
+</body>
+</html>
