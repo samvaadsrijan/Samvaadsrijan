@@ -7,61 +7,86 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
+    :root {
+      --primary-orange: #F47C26;
+      --secondary-white: #ffffff;
+      --dark-blue: #001C40;
+    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
+      background-color: var(--secondary-white);
+    }
+    .navbar {
+      background-color: var(--primary-orange);
+    }
+    .navbar-brand-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .navbar-brand-subtitle {
+      font-size: 14px;
+      font-style: italic;
+      color: #fff3e6;
     }
     .carousel-item {
-      height: 400px;
+      height: 420px;
       background-size: cover;
       background-position: center;
       position: relative;
     }
     .carousel-caption {
       background: rgba(0, 0, 0, 0.6);
-      padding: 10px 20px;
-      border-radius: 5px;
-    }
-    .team-members {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .member {
-      background-color: #fff;
+      padding: 15px 25px;
       border-radius: 8px;
-      padding: 10px;
+    }
+    .news-section {
+      background-color: #fff7f0;
+      padding: 40px 20px;
+    }
+    .news-section h4 {
+      color: #d65d12;
+      border-bottom: 2px solid #d65d12;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    .news-list li {
+      margin-bottom: 10px;
+    }
+    .team-preview {
+      padding: 40px 20px;
+      background-color: #f2f2f2;
+    }
+    .team-preview h4 {
+      color: #001C40;
+      margin-bottom: 20px;
+    }
+    .team-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
       text-align: center;
-      flex: 1 1 150px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    .member img {
+    .team-card img {
       width: 100px;
       height: 100px;
       border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
     }
     footer {
-      background-color: #143F6B;
+      background-color: var(--dark-blue);
       color: white;
       text-align: center;
       padding: 20px 0;
       margin-top: 40px;
-    }
-    .navbar-brand-title {
-      font-size: 18px;
-      font-weight: bold;
-    }
-    .navbar-brand-subtitle {
-      font-size: 14px;
-      font-style: italic;
-      color: #f0f0f0;
     }
   </style>
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
       <a class="navbar-brand d-flex align-items-center" href="#">
         <img src="https://via.placeholder.com/40" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
@@ -91,19 +116,19 @@
   <!-- Hero Section with Carousel -->
   <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active" style="background-image: url('https://via.placeholder.com/1600x400?text=Welcome+to+Samvaad');">
+      <div class="carousel-item active" style="background-image: url('https://rrsdce.in/assets/images/banner/banner-3.jpg');">
         <div class="carousel-caption">
           <h3>संवाद सृजन समिति</h3>
           <p>"तथ्य से सत्य तक, सोच, समृद्धि, समर्थन"</p>
         </div>
       </div>
-      <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1600x400?text=Upcoming+Event:+Debate+Championship');">
+      <div class="carousel-item" style="background-image: url('https://rrsdce.in/assets/images/banner/banner-1.jpg');">
         <div class="carousel-caption">
-          <h3>विवाद प्रतियोगिता</h3>
-          <p>5 जुलाई 2025</p>
+          <h3>Debate Championship</h3>
+          <p>Join the intellectual war of words - 5 July 2025</p>
         </div>
       </div>
-      <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1600x400?text=Udbhav+Utsav');">
+      <div class="carousel-item" style="background-image: url('https://rrsdce.in/assets/images/banner/banner-2.jpg');">
         <div class="carousel-caption">
           <h3>उद्भव उत्सव</h3>
           <p>बौद्धिक चेतना का उत्सव</p>
@@ -120,8 +145,47 @@
     </button>
   </div>
 
-  <!-- Main Content -->
-  <!-- ... rest of the unchanged content ... -->
+  <!-- Latest News Section -->
+  <section class="news-section">
+    <div class="container">
+      <h4>📰 Latest News & Updates</h4>
+      <ul class="news-list">
+        <li><strong>June 20:</strong> Udbhav Utsav registrations open now!</li>
+        <li><strong>June 10:</strong> Inter-college Debate results published.</li>
+        <li><strong>May 30:</strong> Core team felicitation ceremony highlights uploaded.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Team Preview Section -->
+  <section class="team-preview">
+    <div class="container">
+      <h4>🔸 Meet the Team</h4>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="team-card">
+            <img src="https://via.placeholder.com/100" alt="Member">
+            <h5>Rupam Kumari</h5>
+            <p>President</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="team-card">
+            <img src="https://via.placeholder.com/100" alt="Member">
+            <h5>Sweety Kumari</h5>
+            <p>Vice President</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="team-card">
+            <img src="https://via.placeholder.com/100" alt="Member">
+            <h5>Nigam Kumar</h5>
+            <p>Web Lead</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer>
     &copy; 2025 संवाद सृजन समिति |
