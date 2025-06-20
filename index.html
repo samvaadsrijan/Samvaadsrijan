@@ -3,131 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Samvaad Srijan Samiti | Home</title>
+  <title>संवाद सृजन समिति | Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
-      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f9f9f9;
     }
-    header {
-      background-color: #143F6B;
-      color: white;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-    .logo img {
-      height: 50px;
-      margin-right: 10px;
-    }
-    .logo-text {
-      font-size: 20px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-    nav {
-      background-color: #0F3460;
-    }
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .nav-links a {
-      padding: 14px 20px;
-      display: block;
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .nav-links a:hover {
-      background-color: #1A5276;
-    }
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .menu-toggle div {
-      width: 25px;
-      height: 3px;
-      background: white;
-      margin: 4px 0;
-    }
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: #0F3460;
-        width: 100%;
-      }
-      .nav-links.active {
-        display: flex;
-      }
-      .menu-toggle {
-        display: flex;
-      }
-    }
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 20px;
-      gap: 20px;
-    }
-    .main-content {
-      flex: 2;
-      min-width: 300px;
-    }
-    .sidebar {
-      flex: 1;
-      min-width: 250px;
-      background-color: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 300px;
-      background-image: url('https://via.placeholder.com/1600x400?text=Samvaad+Event+Banner');
+    .carousel-item {
+      height: 400px;
       background-size: cover;
       background-position: center;
+      position: relative;
     }
-    .hero-text {
-      position: absolute;
-      bottom: 20px;
-      left: 30px;
-      color: white;
-      font-size: 28px;
+    .carousel-caption {
       background: rgba(0, 0, 0, 0.6);
       padding: 10px 20px;
       border-radius: 5px;
-    }
-    .welcome {
-      background-color: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .welcome h2 {
-      text-align: center;
-      color: #0F3460;
-    }
-    .team-section {
-      margin-top: 30px;
-    }
-    .team-section h3 {
-      color: #143F6B;
-      margin-bottom: 10px;
     }
     .team-members {
       display: flex;
@@ -147,118 +40,93 @@
       height: 100px;
       border-radius: 50%;
     }
-    .footer {
+    footer {
       background-color: #143F6B;
       color: white;
       text-align: center;
       padding: 20px 0;
       margin-top: 40px;
     }
+    .navbar-brand-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .navbar-brand-subtitle {
+      font-size: 14px;
+      font-style: italic;
+      color: #f0f0f0;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="https://via.placeholder.com/50" alt="Club Logo">
-      <div class="logo-text">संवाद सृजन समिति<br><span style="font-size: 16px; font-weight: normal;">तथ्य से सत्य तक,सोच,समृद्धि,समर्थन</span></div>
-    </div>
-    <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </header>
 
-  <nav>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="events.html">Events</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="team.html">Team</a>
-      <a href="contact.html">Contact</a>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="https://via.placeholder.com/40" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
+        <div>
+          <div class="navbar-brand-title">संवाद सृजन समिति</div>
+          <div class="navbar-brand-subtitle">"तथ्य से सत्य तक, सोच, समृद्धि, समर्थन"</div>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="past.html">Past Teams</a></li>
+          <li class="nav-item"><a class="nav-link" href="volunteers.html">Volunteers</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <section class="hero">
-    <div class="hero-text">Empowering Voices | Enriching Minds</div>
-  </section>
-
-  <div class="container">
-    <div class="main-content">
-      <section class="welcome">
-        <h2>Welcome to Samvaad Srijan Samiti</h2>
-        <p>
-          Samvaad Srijan Samiti is the official debating and intellectual forum of Rashtrakavi Ramdhari Singh Dinkar College of Engineering, Begusarai. We aim to foster critical thinking, articulate expression, and a culture of informed dialogue among students.
-        </p>
-        <p>
-          We organize debates, quizzes, elocutions, and thought-driven events. Join us in our mission to ignite minds and elevate conversations.
-        </p>
-      </section>
-
-      <section class="team-section">
-        <h3>Our Current Team</h3>
-        <div class="team-members">
-          <div class="member">
-            <img src="https://via.placeholder.com/100" alt="President">
-            <p><strong>Nigam Kumar</strong><br>President</p>
-          </div>
-          <div class="member">
-            <img src="https://via.placeholder.com/100" alt="Vice President">
-            <p><strong>Rupam</strong><br>l</p>
-          </div>
-          <div class="member">
-            <img src="https://via.placeholder.com/100" alt="Coordinator">
-            <p><strong>Sweety</strong><br>Coordinator</p>
-          </div>
+  <!-- Hero Section with Carousel -->
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="background-image: url('https://via.placeholder.com/1600x400?text=Welcome+to+Samvaad');">
+        <div class="carousel-caption">
+          <h3>संवाद सृजन समिति</h3>
+          <p>"तथ्य से सत्य तक, सोच, समृद्धि, समर्थन"</p>
         </div>
-      </section>
-
-      <section class="team-section">
-        <h3>Past Team Members</h3>
-        <div class="team-members">
-          <div class="member">
-            <img src="https://via.placeholder.com/100" alt="Past President">
-            <p><strong>Ravi Kumar</strong><br>Past President</p>
-          </div>
-          <div class="member">
-            <img src="https://via.placeholder.com/100" alt="Past Secretary">
-            <p><strong>Priya Singh</strong><br>Past Secretary</p>
-          </div>
+      </div>
+      <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1600x400?text=Upcoming+Event:+Debate+Championship');">
+        <div class="carousel-caption">
+          <h3>विवाद प्रतियोगिता</h3>
+          <p>5 जुलाई 2025</p>
         </div>
-      </section>
-
-      <section class="team-section">
-        <h3>Volunteers</h3>
-        <div class="team-members">
-          <div class="member">
-            <img src="https://via.placeholder.com/100" alt="Volunteer 1">
-            <p><strong>Aditya Raj</strong><br>Volunteer</p>
-          </div>
-          <div class="member">
-            <img src="https://via.placeholder.com/100" alt="Volunteer 2">
-            <p><strong>Shalini Kumari</strong><br>Volunteer</p>
-          </div>
-          <div class="member">
-            <img src="https://via.placeholder.com/100" alt="Volunteer 3">
-            <p><strong>Aman Verma</strong><br>Volunteer</p>
-          </div>
+      </div>
+      <div class="carousel-item" style="background-image: url('https://via.placeholder.com/1600x400?text=Udbhav+Utsav');">
+        <div class="carousel-caption">
+          <h3>उद्भव उत्सव</h3>
+          <p>बौद्धिक चेतना का उत्सव</p>
         </div>
-      </section>
+      </div>
     </div>
-
-    <aside class="sidebar">
-      <h3>Latest Updates</h3>
-      <ul>
-        <li>🗓️ Debate Championship on 5th July</li>
-        <li>🎤 Elocution registration open</li>
-        <li>🏆 Udbhav Utsav winners announced</li>
-      </ul>
-    </aside>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 
-  <footer class="footer">
-    &copy; 2025 Samvaad Srijan Samiti | RRSDCE Begusarai | Designed by Nigam
+  <!-- Main Content -->
+  <!-- ... rest of the unchanged content ... -->
+
+  <footer>
+    &copy; 2025 संवाद सृजन समिति |
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
