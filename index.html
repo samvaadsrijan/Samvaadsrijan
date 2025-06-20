@@ -14,17 +14,24 @@
     header {
       background-color: #143F6B;
       color: white;
-      padding: 10px 0;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .topbar {
-      text-align: center;
-      font-size: 20px;
-      font-weight: bold;
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 50px;
+      margin-right: 10px;
     }
     nav {
-      display: flex;
-      justify-content: center;
       background-color: #0F3460;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     nav a {
       padding: 14px 20px;
@@ -36,35 +43,76 @@
     nav a:hover {
       background-color: #1A5276;
     }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 20px;
+    }
+    .main-content {
+      flex: 2;
+      min-width: 300px;
+    }
+    .sidebar {
+      flex: 1;
+      min-width: 250px;
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
     .hero {
       position: relative;
       width: 100%;
-      height: 400px;
-      background-image: url('https://via.placeholder.com/1600x400?text=Samvaad+Srijan+Samiti+Event');
+      height: 300px;
+      background-image: url('https://via.placeholder.com/1600x400?text=Samvaad+Event+Banner');
       background-size: cover;
       background-position: center;
     }
     .hero-text {
       position: absolute;
       bottom: 20px;
-      left: 50px;
+      left: 30px;
       color: white;
-      font-size: 32px;
+      font-size: 28px;
       background: rgba(0, 0, 0, 0.6);
       padding: 10px 20px;
       border-radius: 5px;
     }
     .welcome {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
       background-color: white;
+      padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     .welcome h2 {
       text-align: center;
       color: #0F3460;
+    }
+    .team-section {
+      margin-top: 30px;
+    }
+    .team-section h3 {
+      color: #143F6B;
+      margin-bottom: 10px;
+    }
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .member {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      flex: 1 1 150px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .member img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
     }
     .footer {
       background-color: #143F6B;
@@ -73,38 +121,113 @@
       padding: 20px 0;
       margin-top: 40px;
     }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      nav a {
+        flex: 1 1 100%;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="topbar">Samvaad Srijan Samiti, RRSDCE Begusarai</div>
+    <div class="logo">
+      <img src="https://via.placeholder.com/50" alt="Club Logo">
+      <div>Samvaad Srijan Samiti</div>
+    </div>
   </header>
 
   <nav>
-    <a href="#">Home</a>
-    <a href="#">About Us</a>
-    <a href="#">Events</a>
-    <a href="#">Gallery</a>
-    <a href="#">Team</a>
-    <a href="#">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="events.html">Events</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="team.html">Team</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
   <section class="hero">
-    <div class="hero-text">Celebrating the Voice of Youth – Debates | Dialogues | Development</div>
+    <div class="hero-text">Empowering Voices | Enriching Minds</div>
   </section>
 
-  <section class="welcome">
-    <h2>Welcome to Samvaad Srijan Samiti</h2>
-    <p>
-      Samvaad Srijan Samiti is the official debating and intellectual forum of Rashtrakavi Ramdhari Singh Dinkar College of Engineering, Begusarai. We aim to foster critical thinking, articulate expression, and a culture of informed dialogue among students. Established with the spirit of participative democracy and youth empowerment, we organize debates, quizzes, elocutions, and thought-driven events throughout the academic year.
-    </p>
-    <p>
-      Join us in our mission to ignite minds and elevate conversations. Whether you are a thinker, a speaker, or simply curious — Samvaad has a space for every voice.
-    </p>
-  </section>
+  <div class="container">
+    <div class="main-content">
+      <section class="welcome">
+        <h2>Welcome to Samvaad Srijan Samiti</h2>
+        <p>
+          Samvaad Srijan Samiti is the official debating and intellectual forum of Rashtrakavi Ramdhari Singh Dinkar College of Engineering, Begusarai. We aim to foster critical thinking, articulate expression, and a culture of informed dialogue among students.
+        </p>
+        <p>
+          We organize debates, quizzes, elocutions, and thought-driven events. Join us in our mission to ignite minds and elevate conversations.
+        </p>
+      </section>
+
+      <section class="team-section">
+        <h3>Our Current Team</h3>
+        <div class="team-members">
+          <div class="member">
+            <img src="https://via.placeholder.com/100" alt="President">
+            <p><strong>Nigam Kumar</strong><br>President</p>
+          </div>
+          <div class="member">
+            <img src="https://via.placeholder.com/100" alt="Vice President">
+            <p><strong>Rupam</strong><br>Vice President</p>
+          </div>
+          <div class="member">
+            <img src="https://via.placeholder.com/100" alt="Coordinator">
+            <p><strong>Sweety</strong><br>Coordinator</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="team-section">
+        <h3>Past Team Members</h3>
+        <div class="team-members">
+          <div class="member">
+            <img src="https://via.placeholder.com/100" alt="Past President">
+            <p><strong>Ravi Kumar</strong><br>Past President</p>
+          </div>
+          <div class="member">
+            <img src="https://via.placeholder.com/100" alt="Past Secretary">
+            <p><strong>Priya Singh</strong><br>Past Secretary</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="team-section">
+        <h3>Volunteers</h3>
+        <div class="team-members">
+          <div class="member">
+            <img src="https://via.placeholder.com/100" alt="Volunteer 1">
+            <p><strong>Aditya Raj</strong><br>Volunteer</p>
+          </div>
+          <div class="member">
+            <img src="https://via.placeholder.com/100" alt="Volunteer 2">
+            <p><strong>Shalini Kumari</strong><br>Volunteer</p>
+          </div>
+          <div class="member">
+            <img src="https://via.placeholder.com/100" alt="Volunteer 3">
+            <p><strong>Aman Verma</strong><br>Volunteer</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="sidebar">
+      <h3>Latest Updates</h3>
+      <ul>
+        <li>🗓️ Debate Championship on 5th July</li>
+        <li>🎤 Elocution registration open</li>
+        <li>🏆 Udbhav Utsav winners announced</li>
+      </ul>
+    </aside>
+  </div>
 
   <footer class="footer">
-    &copy; 2025 Samvaad Srijan Samiti | RRSDCE Begusarai
+    &copy; 2025 Samvaad Srijan Samiti | RRSDCE Begusarai | Designed by Nigam
   </footer>
 </body>
 </html>
