@@ -2,45 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Past Team - Samvaad Srijan Samiti</title>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
+    :root {
+      font-size: 16px;
+    }
+    @media (max-width: 600px) {
+      :root {
+        font-size: 14px;
+      }
+    }
+    @media (min-width: 1200px) {
+      :root {
+        font-size: 18px;
+      }
+    }
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
+      color: #222;
     }
     header {
-      background-color: #002147;
+      background-color: #0c1a4b;
       color: white;
-      padding: 20px;
       text-align: center;
+      padding: 1.5rem 1rem;
     }
     nav {
-      background-color: #021b38;
-      padding: 10px;
-      text-align: center;
+      background-color: #002855;
+      padding: 0.75rem 1rem;
+      position: relative;
+    }
+    .nav-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
     }
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 0.5rem 1rem;
+      font-size: 1rem;
       font-weight: bold;
     }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      background-color: #0c1a4b;
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 4px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.2);
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        background-color: #002855;
+        width: 100%;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 0.75rem;
+      }
+    }
     main {
-      padding: 30px;
-      max-width: 1100px;
+      padding: 2rem 1rem;
+      max-width: 1200px;
       margin: auto;
     }
     h2 {
-      color: #002147;
+      color: #0c1a4b;
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
     }
     .intro {
       text-align: center;
-      font-size: 18px;
+      font-size: 1.1rem;
       color: #444;
       margin-bottom: 30px;
     }
@@ -52,31 +112,35 @@
     }
     .member {
       background: white;
-      padding: 10px;
+      padding: 1rem;
       border-radius: 10px;
       box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
       text-align: center;
+      max-width: 200px;
     }
     .member img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
       border-radius: 0;
+      display: block;
+      margin: 0 auto;
     }
     .member h3 {
-      margin: 10px 0 5px;
-      font-size: 18px;
+      margin: 0.5rem 0 0.25rem;
+      font-size: 1.1rem;
     }
     .member p {
       margin: 0;
-      color: #666;
+      font-size: 0.95rem;
+      color: #333;
     }
     footer {
-      background-color: #002147;
+      background-color: #0a2a56;
       color: white;
       text-align: center;
-      padding: 15px;
-      margin-top: 50px;
+      padding: 10px;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -85,12 +149,17 @@
     <h1>Past Team</h1>
   </header>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="team.html">Team</a>
-    <a href="pastteam.html">Past Team</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
+    <div class="nav-container">
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="team.html">Team</a>
+        <a href="pastteam.html">Past Team</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
   </nav>
   <main>
     <div class="intro">
@@ -98,12 +167,12 @@
     </div>
     <h2>Past Core Team</h2>
     <div class="team-grid">
-      <div class="member">
+      <div class="member" data-aos="zoom-in">
         <img src="krishna.jpeg" alt="Krishna Raj">
         <h3>Krishna Raj</h3>
         <p>Content Head</p>
       </div>
-      <div class="member">
+      <div class="member" data-aos="zoom-in">
         <img src="Annya.jpeg" alt="Ananya Raj">
         <h3>Ananya Raj</h3>
         <p>Membership Coordinator</p>
@@ -111,7 +180,15 @@
     </div>
   </main>
   <footer>
-    <p>© 2025 संवाद सृजन समिति</p>
+    <p>&copy; 2025 संवाद सृजन समिति</p>
   </footer>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
