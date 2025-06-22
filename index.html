@@ -4,49 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>संवाद सृजन समिति</title>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
-    :root {
-      font-size: 16px;
-    }
-    @media (max-width: 600px) {
-      :root {
-        font-size: 14px;
-      }
-    }
-    @media (min-width: 1200px) {
-      :root {
-        font-size: 18px;
-      }
-    }
-    * {
-      box-sizing: border-box;
-    }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f5f5f5;
-    }
-    #preloader {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 10000;
-    }
-    #preloader span {
-      width: 50px;
-      height: 50px;
-      border: 5px solid #002855;
-      border-top-color: transparent;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
     }
     header {
       background-color: #0a2a56;
@@ -57,18 +19,33 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      position: relative;
     }
     header img {
       height: 60px;
       margin-bottom: 10px;
     }
     header h1 {
-      font-size: 1.8rem;
+      font-size: 24px;
       margin: 0;
     }
     header p {
       margin-top: 5px;
-      font-size: 0.875rem;
+      font-size: 14px;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+    }
+    .hamburger span {
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+      width: 25px;
     }
     nav {
       background-color: #002855;
@@ -85,6 +62,35 @@
     }
     nav a:hover {
       text-decoration: underline;
+    }
+    .marquee-container {
+      background-color: #e0e0e0;
+      color: #000;
+      font-weight: bold;
+      padding: 6px 0;
+    }
+    .hero {
+      background-color: #002855;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .hero h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 18px;
+    }
+    .hero a {
+      background: white;
+      color: #002855;
+      padding: 10px 20px;
+      border-radius: 20px;
+      display: inline-block;
+      text-decoration: none;
+      margin-top: 15px;
+      font-weight: bold;
     }
     .section {
       padding: 20px;
@@ -112,7 +118,7 @@
       background: rgba(0, 0, 0, 0.5);
       color: white;
       border: none;
-      font-size: 1.25rem;
+      font-size: 20px;
       cursor: pointer;
       padding: 10px;
     }
@@ -122,66 +128,87 @@
     .carousel-btn.right {
       right: 0;
     }
-    .info-box {
+    .info-box, .highlight-cards {
       display: flex;
       justify-content: space-between;
       gap: 20px;
       margin-top: 30px;
       flex-wrap: wrap;
     }
-    .info-box .column {
+    .info-box .column, .highlight-cards .card {
       background: #ffffff;
       padding: 15px;
       border-radius: 8px;
       flex: 1;
       min-width: 200px;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     }
-    .why-join {
-      background: #e9f0fa;
-      padding: 30px 20px;
-      text-align: center;
+    .highlight-cards .card:hover, .info-box .column:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
-    .why-join h2 {
-      margin-bottom: 20px;
-    }
-    .why-join ul {
-      list-style: none;
-      padding: 0;
-      max-width: 600px;
-      margin: auto;
-    }
-    .why-join li {
-      margin: 10px 0;
-      font-size: 1rem;
+    .highlight-cards h3 {
+      margin-bottom: 10px;
     }
     footer {
       background-color: #0a2a56;
       color: white;
       text-align: center;
       padding: 10px;
-      margin-top: 20px;
+      margin-top: 40px;
     }
-    @media (max-width: 600px) {
+    footer a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 12px 15px;
+      border-radius: 50%;
+      font-size: 22px;
+      text-decoration: none;
+      z-index: 999;
+    }
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
       nav {
+        display: none;
         flex-direction: column;
         align-items: center;
+        width: 100%;
       }
-      .info-box {
+      nav.show {
+        display: flex;
+      }
+      .info-box, .highlight-cards {
         flex-direction: column;
       }
     }
   </style>
 </head>
-<body onload="hidePreloader()">
-  <div id="preloader"><span></span></div>
-
+<body>
   <header>
     <img src="logo.png" alt="Club Logo" />
     <h1>संवाद सृजन समिति</h1>
     <p>तथ्य से सत्य तक, सोच, समृद्धि, समर्थन</p>
+    <div class="hamburger" onclick="toggleNav()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
 
-  <nav>
+  <nav id="navbar">
     <a href="index.html">Home</a>
     <a href="team.html">Team</a>
     <a href="pastteam.html">Past Team</a>
@@ -191,9 +218,21 @@
     <a href="contact.html">Contact</a>
   </nav>
 
+  <div class="marquee-container">
+    <marquee behavior="scroll" direction="left" scrollamount="6">
+      🗞️ Welcome to Samvaad Srijan Samiti | 📢 Debate Registrations Open | 🎉 Quiz Winners Announced | 🕘 Meeting Every Friday 4PM
+    </marquee>
+  </div>
+
+  <section class="hero">
+    <h2>Welcome to संवाद सृजन समिति</h2>
+    <p>A Platform to Nurture Ideas, Debate, and Leadership</p>
+    <a href="team.html">Meet Our Team</a>
+  </section>
+
   <main class="section">
     <h2 style="text-align:center;">Latest Moments</h2>
-    <div class="carousel" data-aos="fade-up">
+    <div class="carousel">
       <div class="carousel-slide" id="carouselSlide">
         <img src="Banner.jpeg" alt="Moment 1" />
         <img src="orientation.jpeg" alt="Moment 2" />
@@ -204,44 +243,52 @@
       <button class="carousel-btn right" onclick="nextSlide()">›</button>
     </div>
 
-    <section class="why-join" data-aos="fade-up">
-      <h2>Why Join Us?</h2>
-      <ul>
-        <li>🧠 Develop Critical Thinking and Public Speaking</li>
-        <li>🎤 Engage in Thought-Provoking Debates</li>
-        <li>🏆 Represent College in Inter-University Events</li>
-        <li>🤝 Build Leadership and Teamwork Skills</li>
-      </ul>
-    </section>
+    <div class="highlight-cards">
+      <div class="card">
+        <h3>🎤 Debates</h3>
+        <p>Engage in powerful discussions that shape opinions and confidence.</p>
+      </div>
+      <div class="card">
+        <h3>🧠 Skill Building</h3>
+        <p>Workshops and events that sharpen public speaking and critical thinking.</p>
+      </div>
+      <div class="card">
+        <h3>👥 Teamwork</h3>
+        <p>Fostering leadership, coordination, and camaraderie through team activities.</p>
+      </div>
+    </div>
 
     <div class="info-box">
-      <div class="column" data-aos="fade-right">
+      <div class="column">
         <h3>Upcoming Events</h3>
         <ul>
           <li>Update Soon</li>
         </ul>
       </div>
-      <div class="column" data-aos="fade-left">
+      <div class="column">
         <h3>Notice Board</h3>
-        <ul>
+        <ul id="noticeList">
           <li><a href="#">📰 July Debate Registration Open</a></li>
           <li><a href="#">📢 Quiz Contest Results Announced</a></li>
           <li><a href="#">🗓️ Club Meeting Schedule</a></li>
         </ul>
+        <button onclick="addNotice()">➕ Add Notice</button>
       </div>
     </div>
   </main>
 
   <footer>
     <p>© 2025 संवाद सृजन समिति</p>
+    <div>
+      <a href="#">Instagram</a> |
+      <a href="#">YouTube</a> |
+      <a href="contact.html">Contact</a>
+    </div>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <a class="whatsapp-btn" href="https://wa.me/91XXXXXXXXXX" target="_blank">💬</a>
+
   <script>
-    AOS.init();
-    function hidePreloader() {
-      document.getElementById('preloader').style.display = 'none';
-    }
     const slide = document.getElementById('carouselSlide');
     let index = 0;
     function showSlide() {
@@ -256,6 +303,20 @@
       showSlide();
     }
     setInterval(nextSlide, 5000);
+
+    function toggleNav() {
+      document.getElementById("navbar").classList.toggle("show");
+    }
+
+    function addNotice() {
+      const text = prompt("Enter new notice text:");
+      if (text) {
+        const ul = document.getElementById("noticeList");
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="#">📢 ${text}</a>`;
+        ul.prepend(li);
+      }
+    }
   </script>
 </body>
 </html>
