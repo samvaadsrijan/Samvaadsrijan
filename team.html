@@ -4,56 +4,99 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Team - Samvaad Srijan Samiti</title>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
+    :root {
+      font-size: 16px;
+    }
+    @media (max-width: 600px) {
+      :root {
+        font-size: 14px;
+      }
+    }
+    @media (min-width: 1200px) {
+      :root {
+        font-size: 18px;
+      }
+    }
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background-color: #f7f9fc;
       color: #222;
     }
-
     header, footer {
       background-color: #0c1a4b;
       color: white;
       text-align: center;
       padding: 1.5rem 1rem;
     }
-
     nav {
       background-color: #11235a;
+      padding: 0.75rem 1rem;
+      position: relative;
+    }
+    .nav-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      padding: 0.75rem 0;
+      align-items: center;
     }
-
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
     nav a {
       color: white;
       text-decoration: none;
       margin: 0.5rem 1rem;
       font-size: 1rem;
     }
-
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        background-color: #11235a;
+        width: 100%;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 0.75rem;
+      }
+    }
     main {
       padding: 2rem 1rem;
       max-width: 1200px;
       margin: auto;
     }
-
     h2 {
       text-align: center;
       margin-bottom: 2rem;
       font-size: 1.8rem;
       color: #0c1a4b;
     }
-
     .team-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 20px;
       justify-items: center;
     }
-
     .member {
       background: #e1e8f0;
       border-radius: 10px;
@@ -61,29 +104,20 @@
       text-align: center;
       max-width: 200px;
     }
-
     .member img {
       width: 150px;
       height: 150px;
-      object fit: cover;
+      object-fit: cover;
       border-radius: 0;
     }
-
     .member h3 {
       margin: 0.5rem 0 0.25rem;
       font-size: 1.1rem;
     }
-
     .member p {
       margin: 0;
       font-size: 0.95rem;
       color: #333;
-    }
-
-    @media (max-width: 600px) {
-      nav a {
-        font-size: 0.9rem;
-      }
     }
   </style>
 </head>
@@ -91,64 +125,74 @@
   <header>
     <h1>Team</h1>
   </header>
-
   <nav>
-    <a href="index.html">Home</a>
-    <a href="team.html">Team</a>
-    <a href="pastteam.html">Past Team</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
+    <div class="nav-container">
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="team.html">Team</a>
+        <a href="pastteam.html">Past Team</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
   </nav>
-
   <main>
     <h2>Meet Our Core Team</h2>
     <div class="team-grid">
-      <div class="member">
+      <div class="member" data-aos="zoom-in">
         <img src="Roushan.jpg" alt="Roushan Kumar Mishra">
         <h3>Roushan Kumar Mishra</h3>
         <p>Prof. Incharge</p>
       </div>
-      <div class="member">
+      <div class="member" data-aos="zoom-in">
         <img src="Nigam.jpg" alt="Nigam Kumar">
         <h3>Nigam Kumar</h3>
         <p>President</p>
       </div>
-      <div class="member">
+      <div class="member" data-aos="zoom-in">
         <img src="Ashish.jpeg" alt="Ashish Ranjan">
         <h3>Ashish Ranjan</h3>
         <p>Vice President</p>
       </div>
-      <div class="member">
+      <div class="member" data-aos="zoom-in">
         <img src="yogesh.jpeg" alt="Yogesh">
         <h3>Yogesh</h3>
         <p>Secretary</p>
       </div>
-      <div class="member">
+      <div class="member" data-aos="zoom-in">
         <img src="l.jpeg" alt="Naveen Kumar">
         <h3>Naveen Kumar</h3>
         <p>Membership Coordinator</p>
       </div>
-      <div class="member">
+      <div class="member" data-aos="zoom-in">
         <img src="kaushal.jpeg" alt="Kaushal Kumar">
         <h3>Kaushal Kumar</h3>
         <p>Quiz & Writing Head</p>
       </div>
-      <div class="member">
+      <div class="member" data-aos="zoom-in">
         <img src="sujeet.jpeg" alt="Sujeet Kumar">
         <h3>Sujeet Kumar</h3>
         <p>Digital Head</p>
       </div>
-      <div class="member">
+      <div class="member" data-aos="zoom-in">
         <img src="Rupam.jpg" alt="Rupam Kumari">
         <h3>Rupam Kumari</h3>
         <p>Debate & Speech Head</p>
       </div>
     </div>
   </main>
-
   <footer>
     &copy; 2025 संवाद सृजन समिति
   </footer>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
