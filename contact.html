@@ -1,55 +1,211 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact - Samvaad Srijan Samiti</title>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
-    body { font-family: Arial; margin: 0; background: #f7f7f7; }
-    header, footer { background: #0c1a4b; color: white; text-align: center; padding: 30px; }
-    nav { background: #11235a; padding: 10px; text-align: center; }
-    nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-    section { padding: 40px; text-align: center; }
-    a.button { background: #0c1a4b; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; }
+    :root {
+      font-size: 16px;
+    }
+    @media (max-width: 600px) {
+      :root {
+        font-size: 14px;
+      }
+    }
+    @media (min-width: 1200px) {
+      :root {
+        font-size: 18px;
+      }
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f7f7f7;
+      color: #222;
+    }
+    header {
+      background: #0c1a4b;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+    nav {
+      background-color: #002855;
+      padding: 0.75rem 1rem;
+      position: relative;
+    }
+    .nav-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0.5rem 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      background-color: #0c1a4b;
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 4px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.2);
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        background-color: #002855;
+        width: 100%;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 0.75rem;
+      }
+    }
+    section {
+      padding: 2rem 1rem;
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+    form {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 0.5rem 0 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+    button {
+      background: #0c1a4b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #094075;
+    }
+    a.button {
+      background: #0c1a4b;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      display: inline-block;
+      margin: 5px;
+    }
+    footer {
+      background-color: #0a2a56;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+    footer .footer-links {
+      margin-top: 10px;
+    }
+    footer .footer-links a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+    footer .footer-links a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Contact Us</h1>
+  </header>
 
-<header>
-  <h1>Contact Us</h1>
-</header>
+  <nav>
+    <div class="nav-container">
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="team.html">Team</a>
+        <a href="pastteam.html">Past Team</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="team.html">Team</a>
-  <a href="pastteam.html">Past Team</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="events.html">Events</a>
-  <a href="contact.html">Contact</a>
-</nav>
- <h2>Feedback Form</h2>
-<form action="https://formspree.io/f/mdkzlaob" method="POST">
-  <label for="name">Name:</label><br>
-  <input type="text" id="name" name="name" required><br><br>
+  <section data-aos="fade-up">
+    <h2>Feedback Form</h2>
+    <form action="https://formspree.io/f/mdkzlaob" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
 
-  <label for="branch">Branch:</label><br>
-  <input type="text" id="branch" name="branch" required><br><br>
+      <label for="branch">Branch:</label>
+      <input type="text" id="branch" name="branch" required>
 
-  <label for="message">Message:</label><br>
-  <textarea id="message" name="message" rows="4" required></textarea><br><br>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
 
-  <button type="submit">Send Feedback</button>
-</form>
-<section>
-  <p>📧 Email us at:</p>
-  <a class="button" href="mailto:debateclub24@gmail.com">debateclub24@gmail.com</a>
-  <p>Follow us:</p>
-<a class="button" href="https://www.instagram.com/samvaadsrijan?igsh=YjE2Y3h4ZnVydWQz" target="_blank">Instagram</a>
-<a class="button" href="https://chat.whatsapp.com/D1DN6kU5n5Y202Q6myiVjh" target="_blank">Join WhatsApp Group</a>
+      <button type="submit">Send Feedback</button>
+    </form>
 
-</section>
+    <p>📧 Email us at:</p>
+    <a class="button" href="mailto:debateclub24@gmail.com">debateclub24@gmail.com</a>
+    <p>Follow us:</p>
+    <a class="button" href="https://www.instagram.com/samvaadsrijan?igsh=YjE2Y3h4ZnVydWQz" target="_blank">Instagram</a>
+    <a class="button" href="https://chat.whatsapp.com/D1DN6kU5n5Y202Q6myiVjh" target="_blank">Join WhatsApp Group</a>
+  </section>
 
-<footer>
-  &copy; 2025 संवाद सृजन समिति
-</footer>
+  <footer>
+    <p>&copy; 2025 संवाद सृजन समिति</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
 
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
