@@ -25,14 +25,14 @@
       background-color: #f7f9fc;
       color: #222;
     }
-    header, footer {
+    header {
       background-color: #0c1a4b;
       color: white;
       text-align: center;
       padding: 1.5rem 1rem;
     }
     nav {
-      background-color: #11235a;
+      background-color: #002855;
       padding: 0.75rem 1rem;
       position: relative;
     }
@@ -53,6 +53,10 @@
       text-decoration: none;
       margin: 0.5rem 1rem;
       font-size: 1rem;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
     .hamburger {
       display: none;
@@ -67,7 +71,7 @@
         display: none;
         flex-direction: column;
         text-align: center;
-        background-color: #11235a;
+        background-color: #002855;
         width: 100%;
       }
       .nav-links.show {
@@ -118,6 +122,13 @@
       margin: 0;
       font-size: 0.95rem;
       color: #333;
+    }
+    footer {
+      background-color: #0a2a56;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -184,7 +195,7 @@
     </div>
   </main>
   <footer>
-    &copy; 2025 संवाद सृजन समिति
+    <p>&copy; 2025 संवाद सृजन समिति</p>
   </footer>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
