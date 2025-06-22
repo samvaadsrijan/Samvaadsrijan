@@ -19,6 +19,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      position: relative;
     }
     header img {
       height: 60px;
@@ -31,6 +32,20 @@
     header p {
       margin-top: 5px;
       font-size: 14px;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 15px;
+    }
+    .hamburger span {
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+      width: 25px;
     }
     nav {
       background-color: #002855;
@@ -47,6 +62,12 @@
     }
     nav a:hover {
       text-decoration: underline;
+    }
+    .marquee-container {
+      background-color: #e0e0e0;
+      color: #000;
+      font-weight: bold;
+      padding: 6px 0;
     }
     .section {
       padding: 20px;
@@ -105,10 +126,18 @@
       padding: 10px;
       margin-top: 20px;
     }
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
       nav {
+        display: none;
         flex-direction: column;
         align-items: center;
+        width: 100%;
+      }
+      nav.show {
+        display: flex;
       }
       .info-box {
         flex-direction: column;
@@ -121,9 +150,14 @@
     <img src="logo.png" alt="Club Logo" />
     <h1>संवाद सृजन समिति</h1>
     <p>तथ्य से सत्य तक, सोच, समृद्धि, समर्थन</p>
+    <div class="hamburger" onclick="toggleNav()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
 
-  <nav>
+  <nav id="navbar">
     <a href="index.html">Home</a>
     <a href="team.html">Team</a>
     <a href="pastteam.html">Past Team</a>
@@ -132,6 +166,12 @@
     <a href="events.html">Events</a>
     <a href="contact.html">Contact</a>
   </nav>
+
+  <div class="marquee-container">
+    <marquee behavior="scroll" direction="left" scrollamount="6">
+      🗞️ Welcome to Samvaad Srijan Samiti | 📢 Debate Registrations Open | 🎉 Quiz Winners Announced | 🕘 Meeting Every Friday 4PM
+    </marquee>
+  </div>
 
   <main class="section">
     <h2 style="text-align:center;">Latest Moments</h2>
@@ -155,11 +195,12 @@
       </div>
       <div class="column">
         <h3>Notice Board</h3>
-        <ul>
+        <ul id="noticeList">
           <li><a href="#">📰 July Debate Registration Open</a></li>
           <li><a href="#">📢 Quiz Contest Results Announced</a></li>
           <li><a href="#">🗓️ Club Meeting Schedule</a></li>
         </ul>
+        <button onclick="addNotice()">➕ Add Notice</button>
       </div>
     </div>
   </main>
@@ -183,6 +224,20 @@
       showSlide();
     }
     setInterval(nextSlide, 5000);
+
+    function toggleNav() {
+      document.getElementById("navbar").classList.toggle("show");
+    }
+
+    function addNotice() {
+      const text = prompt("Enter new notice text:");
+      if (text) {
+        const ul = document.getElementById("noticeList");
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="#">📢 ${text}</a>`;
+        ul.prepend(li);
+      }
+    }
   </script>
 </body>
 </html>
