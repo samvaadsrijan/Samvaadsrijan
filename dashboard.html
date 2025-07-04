@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard - Samvaad</title>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+</head>
+<body>
+  <h2>Welcome to Samvaad Dashboard</h2>
+  <p id="userEmail"></p>
+  <button onclick="logout()">Logout</button>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCMr6HGK9QntJpFQfWOxshnog2FBJ8OfKs",
+      authDomain: "samvaad-auth.firebaseapp.com",
+      projectId: "samvaad-auth",
+      storageBucket: "samvaad-auth.firebasestorage.app",
+      messagingSenderId: "435900353791",
+      appId: "1:435900353791:web:4a66cc9b0cdd04c64590ca",
+      measurementId: "G-EY8EFSVYD0"
+    };
+
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    auth.onAuthStateChanged(user => {
+      if (!user) {
+        window.location.href = "login.html";
+      } else {
+        document.getElementById("userEmail").innerText = "Logged in as: " + user.email;
+      }
+    });
+
+    function logout() {
+      auth.signOut().then(() => {
+        window.location.href = "login.html";
+      });
+    }
+  </script>
+</body>
+</html>
