@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register - Samvaad</title>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+</head>
+<body>
+  <h2>Register</h2>
+  <input type="email" id="email" placeholder="Email"><br>
+  <input type="password" id="password" placeholder="Password"><br>
+  <button onclick="register()">Register</button>
+  <p id="message"></p>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCMr6HGK9QntJpFQfWOxshnog2FBJ8OfKs",
+      authDomain: "samvaad-auth.firebaseapp.com",
+      projectId: "samvaad-auth",
+      storageBucket: "samvaad-auth.firebasestorage.app",
+      messagingSenderId: "435900353791",
+      appId: "1:435900353791:web:4a66cc9b0cdd04c64590ca",
+      measurementId: "G-EY8EFSVYD0"
+    };
+
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    function register() {
+      const email = document.getElementById("email").value;
+      const pass = document.getElementById("password").value;
+
+      auth.createUserWithEmailAndPassword(email, pass)
+        .then(() => {
+          document.getElementById("message").innerText = "✅ Registered Successfully!";
+        })
+        .catch(error => {
+          document.getElementById("message").innerText = "❌ " + error.message;
+        });
+    }
+  </script>
+</body>
+</html>
