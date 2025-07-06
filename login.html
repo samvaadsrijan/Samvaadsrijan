@@ -2,17 +2,15 @@
 <html>
 <head>
   <title>Login - Samvaad</title>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
-</head>
-<body>
-  <h2>Login</h2>
-  <input type="email" id="email" placeholder="Email"><br>
-  <input type="password" id="password" placeholder="Password"><br>
-  <button onclick="login()">Login</button>
-  <p id="message"></p>
+  <script type="module">
+    // ✅ Import Firebase
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import {
+      getAuth,
+      signInWithEmailAndPassword
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-  <script>
+    // ✅ Firebase config
     const firebaseConfig = {
       apiKey: "AIzaSyCMr6HGK9QntJpFQfWOxshnog2FBJ8OfKs",
       authDomain: "samvaad-auth.firebaseapp.com",
@@ -23,22 +21,31 @@
       measurementId: "G-EY8EFSVYD0"
     };
 
-    const app = firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-    function login() {
+    // ✅ Login function
+    window.login = function () {
       const email = document.getElementById("email").value;
       const pass = document.getElementById("password").value;
 
-      auth.signInWithEmailAndPassword(email, pass)
+      signInWithEmailAndPassword(auth, email, pass)
         .then(() => {
           document.getElementById("message").innerText = "✅ Login Successful!";
-          window.location.href = "dashboard.html";
+          // ✅ Redirect to dashboard
+          window.location.href = "dash.html";
         })
         .catch(error => {
           document.getElementById("message").innerText = "❌ " + error.message;
         });
     }
   </script>
+</head>
+<body>
+  <h2>Login</h2>
+  <input type="email" id="email" placeholder="Email"><br><br>
+  <input type="password" id="password" placeholder="Password"><br><br>
+  <button onclick="login()">Login</button>
+  <p id="message" style="color:green; font-weight:bold;"></p>
 </body>
 </html>
