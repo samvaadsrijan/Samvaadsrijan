@@ -2,17 +2,11 @@
 <html>
 <head>
   <title>Register - Samvaad</title>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
-</head>
-<body>
-  <h2>Register</h2>
-  <input type="email" id="email" placeholder="Email"><br>
-  <input type="password" id="password" placeholder="Password"><br>
-  <button onclick="register()">Register</button>
-  <p id="message"></p>
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-  <script>
     const firebaseConfig = {
       apiKey: "AIzaSyCMr6HGK9QntJpFQfWOxshnog2FBJ8OfKs",
       authDomain: "samvaad-auth.firebaseapp.com",
@@ -23,21 +17,33 @@
       measurementId: "G-EY8EFSVYD0"
     };
 
-    const app = firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-    function register() {
+    window.register = async function () {
       const email = document.getElementById("email").value;
       const pass = document.getElementById("password").value;
+      const msg = document.getElementById("message");
 
-      auth.createUserWithEmailAndPassword(email, pass)
-        .then(() => {
-          document.getElementById("message").innerText = "✅ Registered Successfully!";
-        })
-        .catch(error => {
-          document.getElementById("message").innerText = "❌ " + error.message;
-        });
-    }
+      try {
+        await createUserWithEmailAndPassword(auth, email, pass);
+        msg.innerText = "✅ Registration Successful!";
+        msg.style.color = "green";
+        setTimeout(() => {
+          window.location.href = "login.html";
+        }, 1500);
+      } catch (error) {
+        msg.innerText = "❌ " + error.message;
+        msg.style.color = "red";
+      }
+    };
   </script>
+</head>
+<body>
+  <h2>Register</h2>
+  <input type="email" id="email" placeholder="Email" /><br>
+  <input type="password" id="password" placeholder="Password" /><br>
+  <button onclick="register()">Register</button>
+  <p id="message"></p>
 </body>
 </html>
