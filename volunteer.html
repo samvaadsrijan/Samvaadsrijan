@@ -111,17 +111,21 @@
       justify-items: center;
     }
     .member {
-      background: white;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      max-width: 200px;
-    }
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 200px;
+  min-height: 350px; /* sab card ek hi height me rahe */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
     .member img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
+  width: 100%;
+  height: 250px;   /* sabhi images ki ek uniform height */
+  object-fit: cover; /* image apne ratio me crop hoke fit hogi */
   border-radius: 8px;
   display: block;
   margin: 0 auto;
