@@ -124,8 +124,9 @@
 }
     .member img {
   width: 100%;
-  height: 250px;   /* sabhi images ki ek uniform height */
-  object-fit: cover; /* image apne ratio me crop hoke fit hogi */
+  height: 250px;        /* sabhi same height */
+  object-fit: contain;  /* poora image dikhayega, crop nahi karega */
+  background: #f4f4f4;  /* gap aaega to background clean dikhai de */
   border-radius: 8px;
   display: block;
   margin: 0 auto;
